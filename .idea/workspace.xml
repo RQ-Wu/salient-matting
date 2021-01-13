@@ -2,10 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed312af0-aa75-4a07-a456-95b23b309694" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/matting" beforeDir="false" afterPath="$PROJECT_DIR$/matting" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/matting/core/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/matting/core/model_loader.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/matting/core/deploy.py" beforeDir="false" afterPath="$PROJECT_DIR$/matting/core/deploy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matting/deploy.sh" beforeDir="false" afterPath="$PROJECT_DIR$/matting/deploy.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/matting/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/matting/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/deploy.sh" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/alpha/boy-1518482_1920_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/alpha/dandelion-1335575_1920_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/alpha/light-bulb-376930_1920_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/alpha/sieve-641426_1920_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/alpha/spring-289527_1920_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/image/boy-1518482_1920_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/image/dandelion-1335575_1920_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/image/light-bulb-376930_1920_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/image/sieve-641426_1920_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/image/spring-289527_1920_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/pred/boy-1518482_1920_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/pred/dandelion-1335575_1920_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/pred/light-bulb-376930_1920_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/pred/sieve-641426_1920_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/pred/spring-289527_1920_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/trimap/boy-1518482_1920_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/trimap/dandelion-1335575_1920_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/trimap/light-bulb-376930_1920_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/trimap/sieve-641426_1920_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/result/example/trimap/spring-289527_1920_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/matting/train.sh" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -21,7 +45,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/matting" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1mxiif9zm8qoU6vDEQ3wQONm37H" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
