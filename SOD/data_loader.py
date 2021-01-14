@@ -133,6 +133,7 @@ class DatasetVal(Dataset):
 
                 example = {}
                 example["img_path"] = img_path
+                example["image_name"] = file_name
                 example["label_name"] = file_name.replace(".jpg", ".png")
 
                 self.examples.append(example)

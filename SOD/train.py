@@ -3,6 +3,7 @@ import os, cv2
 import sys
 import numpy as np
 import SOD.pytorch_wasserstein
+from tqdm import tqdm
 
 _wasserstein_loss = SOD.pytorch_wasserstein.Wasserstein(window_size=11, size_average=True)
 
@@ -37,39 +38,38 @@ class Trainer(object):
 
     def train(self, val_loader, val_dataset):
 
+        # print("Step1.  Saliency Object Detection")
         dataloaders = {'val': val_loader}
         for phase in ['val']:
-
             self.model.eval()
-            bar_steps = len(dataloaders[phase])
-            process_bar = ShowProcess(bar_steps)
+            # bar_steps = len(dataloaders[phase])
+            # process_bar = ShowProcess(bar_steps)
 
             save_sal_path = os.path.join(".", "data", "salmap")
-            print(save_sal_path)
             if not os.path.exists(save_sal_path):
                 os.makedirs(save_sal_path)
 
-            for i, data in enumerate(dataloaders[phase], 0):
-                inputs, h, w = data
-                inputs = inputs.to(self.device).float()
+            with tqdm(total=len(val_dataset)) as pbar:
+                for i, data in enumerate(dataloaders[phase], 0):
+                    inputs, h, w = data
+                    inputs = inputs.to(self.device).float()
 
-                with torch.set_grad_enabled(phase == 'train'):
-                    supervision1 = self.model(inputs)
-                    supervision1 = torch.sigmoid(supervision1)
-                    supervision1 = supervision1.clamp(0, 1)
-                    output = supervision1.detach().cpu().numpy()
-                    image = output[0, :, :, :]
-                    image = np.transpose(image, (1, 2, 0))
-                    image = image[:, :, 0]
-                    image = image * 255.0
-                    image = np.round(image)
-                    image = np.uint8(image)
-                    image = cv2.resize(image, dsize=(w, h), interpolation=cv2.INTER_LINEAR)
-                    cv2.imwrite(os.path.join(save_sal_path, val_dataset.examples[i]["label_name"]), image)
-                process_bar.show_process()
-            process_bar.close()
+                    with torch.set_grad_enabled(phase == 'train'):
+                        supervision1 = self.model(inputs)
+                        supervision1 = torch.sigmoid(supervision1)
+                        supervision1 = supervision1.clamp(0, 1)
+                        output = supervision1.detach().cpu().numpy()
+                        image = output[0, :, :, :]
+                        image = np.transpose(image, (1, 2, 0))
+                        image = image[:, :, 0]
+                        image = image * 255.0
+                        image = np.round(image)
+                        image = np.uint8(image)
+                        image = cv2.resize(image, dsize=(w, h), interpolation=cv2.INTER_LINEAR)
+                        cv2.imwrite(os.path.join(save_sal_path, val_dataset.examples[i]["label_name"]), image)
+                    pbar.set_postfix(step='Salient Object Detection', image_name=val_dataset.examples[i]["image_name"])
+                    pbar.update(1)
 
-        print("val finshed!")
 
     def load_weights(self, file_path):
 
